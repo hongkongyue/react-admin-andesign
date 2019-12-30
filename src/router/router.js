@@ -24,7 +24,7 @@ import Input from '../page/input'
 export default class routerMap extends React.Component{
 	    // mixins: [ Lifecycle ]
 	    updateHandle(){
-        		console.log(this.props.history);
+
         		Nav()
         		// console.log(this.props.location.pathname)
         }
@@ -33,7 +33,7 @@ export default class routerMap extends React.Component{
         // }
         render(){
 			   // Nav()
-			     console.log(this.$refs.son,'999999999999999999999')
+			    //  console.log(this.$refs.son,'999999999999999999999')
         	   return(
 	        	   	<Router onUpdate={this.updateHandle.bind(this)} history={this.props.history}>
 	        	   		    <Route      path='/'       component={Demo1}>
