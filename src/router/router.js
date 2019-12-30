@@ -32,7 +32,8 @@ export default class routerMap extends React.Component{
         // 	console.log(nextLocation)
         // }
         render(){
-        	   // Nav()
+			   // Nav()
+			     console.log(this.$refs.son,'999999999999999999999')
         	   return(
 	        	   	<Router onUpdate={this.updateHandle.bind(this)} history={this.props.history}>
 	        	   		    <Route      path='/'       component={Demo1}>
