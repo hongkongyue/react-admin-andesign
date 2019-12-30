@@ -4,17 +4,4 @@ ReactJs和React Native的原理是相同的，都是由js实现的虚拟dom来�
 
 React基于组件（component）开发，组件和组件之间通过props传递值，每个组件都有一个状态（state），当某个方法改变了这个状态值时，整个组件就会重新渲染，从而达到刷新（这里的刷新是指state的属性与之前的相比较，发生改变了就重绘，否则不变，相当于Vue里边的 watch函数）。另外，说到重新渲染就要提到虚拟dom了，就是用js模拟dom结构，等整个组件的dom更新完毕，才渲染到页面，简单来说只更新了相比之前改变了的部分，而不是全部刷新，所以效率很高。
 
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/a.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/b.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/c.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/d.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/e.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/echarts.png)
-
-![img](https://github.com/Hi-Sen/React-Antd-demo-one/blob/master/src/img/f.png)
 
