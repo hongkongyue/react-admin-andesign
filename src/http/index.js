@@ -1,9 +1,6 @@
 
 import Axios from 'axios'
-
-var baseUrl = 'https://ws.mammasay.com/';
-
-var axios = Axios.create({
+let  axios = Axios.create({
   baseURL: '',
   timeout: 600000,
   withCredentials: true, //是否允许跨域

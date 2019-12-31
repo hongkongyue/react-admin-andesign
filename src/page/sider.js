@@ -3,7 +3,7 @@ import {Link } from 'react-router'  //引入路由函数
 
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
-// const MenuItemGroup = Menu.ItemGroup;
+
 
 export default class Sider extends React.Component {
 	constructor (props) {
@@ -20,11 +20,7 @@ export default class Sider extends React.Component {
 	}
     render () {
 				return (
-					<Menu theme='dark'
-						  onClick={this.handleClick}
-						  onChange = {this.getValue}
-						  style={{ width: 256,height:'93.2vh',overflowY:'hidden',minWidth:256}}
-						  defaultSelectedKeys={['1']}
+					<Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{ width: 186,height:'93.2vh',overflowY:'hidden'}}  defaultSelectedKeys={['1']}
 						  defaultOpenKeys = {['sub1']}
 						  mode="inline"
 					>
