@@ -5,6 +5,6 @@ import { hashHistory ,browserHistory} from 'react-router'
 import RouterPage from './router'  
   
 render(  
-    <RouterPage history = { browserHistory }/>,  
+    <RouterPage history = {browserHistory}/>,  
     document.getElementById('root')
 )  
