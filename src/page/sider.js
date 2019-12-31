@@ -20,7 +20,7 @@ export default class Sider extends React.Component {
 	}
     render () {
 				return (
-					<Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{ width: 186,height:'93.2vh',overflowY:'hidden'}}  defaultSelectedKeys={['1']}
+					<Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{height:'93.2vh',overflowY:'hidden'}}  defaultSelectedKeys={['1']}
 						  defaultOpenKeys = {['sub1']}
 						  mode="inline"
 					>
