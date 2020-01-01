@@ -56,13 +56,13 @@ export default class Demo1 extends React.Component {
     }
     render () {
         return (
-            <div style={{minWidth:'1000px'}}>
+            <div style={{width:100+'%'}}>
                 <Layout>
-                    <Header style={{color:'#fff',textAlign:'center',fontWeight:'bold'}}>
+                    <Header style={{height:40+'px',lineHeight:40+'px'}}>
                          <HeaderComponent/>
                     </Header>
                     <Layout>
-                        <Sider style={{color:'#666'}}>
+                        <Sider style={{color:'#666',width:156}}>
                             <SiderComponent getValue={this.getValue.bind(this) } />
                         </Sider>
                         <Layout>

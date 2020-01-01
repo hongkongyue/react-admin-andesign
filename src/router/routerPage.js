@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, IndexRoute } from 'react-router'
 
 // 引入所有基础配置
-import '../config/globalConfig'
+// import '../config/globalConfig'
 
 import Demo1 from '../page'
 import Tabble from '../page/tabble'

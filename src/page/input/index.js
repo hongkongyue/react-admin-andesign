@@ -26,9 +26,6 @@ export default class Complete extends React.Component {
   }
   render() {
         const {dataSource} = this.state;
-	    if(this.state.value){
-	    	                console.log('视图更新了')
-	    }
     return (
 	      <div style={{marginTop: 10}}>
 			      <AutoComplete

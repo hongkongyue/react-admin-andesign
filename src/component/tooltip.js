@@ -28,7 +28,6 @@ export default class App extends React.Component {
     render() {
         return (
         <div>
-            <span onClick={this.showModal}>我的通知 ... </span>
             <Modal
             title="本人公告"
             visible={this.state.visible}
@@ -36,9 +35,7 @@ export default class App extends React.Component {
             onCancel={this.handleCancel}
             zIndex={100000000}
             >
-            <p>1, react + Ant Design 实践 demo</p>
-            <p>2, 项目仅供欣赏，源码请访问本人 GitHub</p>
-            <p>3, https://github.com/Hi-Sen/React-Antd-demo-one.git</p>
+            <p> https://github.com/Hi-Sen/React-Antd-demo-one.git</p>
             </Modal>
         </div>
         );

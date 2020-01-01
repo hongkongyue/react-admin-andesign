@@ -9,9 +9,9 @@ export default class TabbleAll extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            bannerArr: [],
-            shopArr: [],
-            content: ''
+                        bannerArr: [],
+                        shopArr: [],
+                        content: '',
         }
     }
 
@@ -51,10 +51,10 @@ export default class TabbleAll extends React.Component {
     // 测试请求商品列表
     componentDidMount() {
         window.Axios.post('/eop/productlaunch/developPhotoReportManage/selectPage', { start: 0, length: 10 }).then(res => {
-            this.setState({
-                bannerArr: res.Data.BannerList,
-                shopArr: res.Data.HotList
-            })
+            // this.setState({
+            //     bannerArr: res.Data.BannerList,
+            //     shopArr: res.Data.HotList
+            // })
             console.log(res)
         }).catch(err => {
             console.log(`${err}`)

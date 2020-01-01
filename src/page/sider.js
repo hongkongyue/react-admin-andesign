@@ -1,41 +1,62 @@
 import React from 'react';
 import {Link } from 'react-router'  //引入路由函数
-
+import menuList from './mock/menu.js'
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
-// const MenuItemGroup = Menu.ItemGroup;
+
+
 
 export default class Sider extends React.Component {
 	constructor (props) {
-		super(props)
-		this.state = {
-			key: 1
-		}
+		 super(props)
+		 this.state={
+		         	menuList:[]
+		 }
 	}
-
+    componentDidMount(){
+			this.setState({
+						menuList:menuList()
+			})
+		
+	}
     handleClick = (e) => {
-		console.log(e)
-		this.props.getValue(e.key,e.item.props.children);
-		console.log('当前的路径是：'+e.item.props.children.props.to,'当前的路径名称是：'+e.item.props.children.props.children)
 	}
     render () {
+				 const {menuList}=this.state
+						console.log(menuList,'912345')
 				return (
-					<Menu theme='dark'
-						  onClick={this.handleClick}
-						  onChange = {this.getValue}
-						  style={{ width: 256,height:'93.2vh',overflowY:'hidden',minWidth:256}}
-						  defaultSelectedKeys={['1']}
-						  defaultOpenKeys = {['sub1']}
-						  mode="inline"
-					>
-						<SubMenu key="sub1" title={<span><Icon type="frown" /><span>表格组件</span></span>}>
+					<p>
+					   { menuList.map(index=>{
+									 <span>
+										{index.title}
+									</span>
+								  }) 
+						}
+				  </p>
+				);
+			}
+	 }
+// 	 <Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{height:'93.2vh',overflowY:'hidden'}} mode="inline">
+// 	 {
+// 		 menuList.map(index=>{
+// 			 <SubMenu key={index.name}  title={<span> <Icon type={index.type} /> <span>{index.title}</span></span>}>
+// 				{
+// 					 index.children.map(k=>{
+// 						   return (<Menu.Item key={k.name}>{k.title}</Menu.Item>)
+// 					 })
+// 				}
+// 			</SubMenu>
+// 		 })
+// 	 } 
+//  </Menu>
+	 
+{/* <SubMenu key="sub1" title={<span><Icon type="frown" /><span>表格组件</span></span>}>
 								<Menu.Item key="1">
 									<Link to = {'tabble'}>表格</Link>
 								</Menu.Item>
 								<Menu.Item key="2">
 									<Link to = {'label'}>标签页</Link>
-								</Menu.Item>
-							
+								</Menu.Item>、
 						</SubMenu>
                         <SubMenu key="sub10" title={<span><Icon type="frown" /><span>表单轮播</span></span>}>
 								<Menu.Item key="3">
@@ -66,16 +87,10 @@ export default class Sider extends React.Component {
 							</Menu.Item>
 						</SubMenu>
 						<SubMenu key="sub6" title={<span><Icon type="frown" /><span>redux 状态管理</span></span>}>
-							<Menu.Item key="9">
-							<Link to = {'redux'}>Redux</Link>
-							</Menu.Item>
+							<Menu.Item key="9"> <Link to = {'redux'}>Redux</Link></Menu.Item>
 						</SubMenu>
 						<SubMenu key="sub7" title={<span><Icon type="frown" /><span>自己练习</span></span>}>
 							<Menu.Item key="10">
 							<Link to = {'input'}>表格练习</Link>
 							</Menu.Item>
-						</SubMenu>
-					</Menu>
-				);
-			}
-  }
+						</SubMenu> */}
