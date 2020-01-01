@@ -18,9 +18,6 @@ import WangEditor from '../page/wangeditor'
 import Select from '../page/select'
 import Redux from '../page/redux'
 import Input from '../page/input'
-
-// 生成组件路由
-
 export default class routerMap extends React.Component{
 	    // mixins: [ Lifecycle ]
 	    updateHandle(){
