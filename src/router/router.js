@@ -27,6 +27,7 @@ export default class routerMap extends React.Component{
         		Nav()
         }
         // routerWillLeave(nextLocation){
+			//console.log(0000)
         // }
         render(){
         	   return(
