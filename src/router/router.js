@@ -24,9 +24,7 @@ export default class routerMap extends React.Component{
         		Nav()
         }
         // routerWillLeave(nextLocation){
-			//console.log(0000)
-		
-			
+		   //删除的部分
         // }
         render(){
         	   return(
