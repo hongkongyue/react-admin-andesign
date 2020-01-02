@@ -56,8 +56,8 @@ export default class Demo1 extends React.Component {
     }
     render () {
         return (
-            <div style={{width:100+'%'}}>
-                <Layout>
+            <div style={{width:100+'%',height:100+'%'}}>
+                <Layout style={{height:100+'%'}}>
                     <Header style={{height:40+'px',lineHeight:40+'px'}}>
                          <HeaderComponent/>
                     </Header>
