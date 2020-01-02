@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types"
-import TabbleOne from './demo1'
-import TabbleTwo from './demo2'
-import TabbleThree from './demo3'
+import Table from './table'
+
 
 export default class TabbleAll extends React.Component {
     // 父组件声明自己支持 context
@@ -21,17 +20,7 @@ export default class TabbleAll extends React.Component {
     callback(msg){
         console.log(msg);
     }
-
-
     render () {
-        return (
-            <div style={{width:'1200px',margin: 'auto',marginTop:50}}>
-                <TabbleTwo title="哈哈哈，老爸"/>
-                <p style={{marginTop:20}}></p>
-                <TabbleOne callback ={ this.callback.bind(this) }/>
-                <p style={{marginTop:20}}></p>
-                <TabbleThree/>
-            </div>
-        )
+        return (<Table/>)
     }
 }

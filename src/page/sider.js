@@ -21,7 +21,7 @@ export default class Sider extends React.Component {
     }
 	//使用递归
     renderMenu = (data) => {
-        return data.map((item) => {
+        return  data.map((item) => {
             if (!!item.children&&item.children.length>0) {
                 return (
                     <SubMenu key={item.id}  title={<span><Icon type={item.type}/><span>{item.title}</span></span>}>
@@ -31,7 +31,7 @@ export default class Sider extends React.Component {
             } else {
                 return (
                     <MenuItem  key={item.name}  title={item.title}>
-                         <Link to = {item.name}>{item.title}</Link>
+                           <Link to = {item.name}>{item.title}</Link>
                     </MenuItem>
                 )
             }
@@ -39,7 +39,7 @@ export default class Sider extends React.Component {
 	};
 	//递归循环左侧菜单栏按钮
 	renderMenu=(data)=>{
-         return data.map((item)=>{
+        return data.map((item)=>{
                 if(!!item.children&&item.children.length>0){
 					return (
 						<SubMenu key={item.id} title={<span><Icon type="item.type"/><span>{item.title}</span></span>}>

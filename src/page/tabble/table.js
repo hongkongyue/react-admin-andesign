@@ -2,7 +2,8 @@ import React from 'react';
 import { Table,Button,message} from 'antd';
 import filter     from '../../filters';//已经验证，这是完全OK的；
 import ModalTips     from './modal.js';
-import Paging        from './Pagination'
+import './table.css'
+// import Paging        from './Pagination'
 var initData=[
                 {id:120,name:'尚美饰品',        age:1541384217,address:'淮河路一号',honor:'优秀品牌'},
                 {id:121,name:'星星饰品',        age:1541384217,address:'楚相大道190号',honor:'优秀品牌'},
@@ -46,34 +47,42 @@ export default class App extends React.Component{
          {
           title: `ID`,
           dataIndex: 'id',
-          width:150
-        },
+          width:50,
+          align:'center'
+          },
          {
           title: `姓名`,
           dataIndex: 'name',
-          width:150,
-          render:(id,index)=>{
-             return filter.normalString(index.name,4)
-          }
+          width:50,
+          align:'center',
+          ellipsis:true,
+          // render:(id,index)=>{
+          //    return filter.normalString(index.name,4)
+          // }
         }, {
           title: `年龄`,
           dataIndex: 'age',
           width:150,
+          align:'center',
           render:(id,index)=>{
              return filter.normalTime(index.age)
           }
         }, {
           title: `地址`,
           dataIndex: 'address',
-          width:150,        //设width的两种方法：一种的是直接的宽度不需要加px,另外一种是加'20%'的百分比；
+          width:50,
+          ellipsis:true,
+          align:'center',
         }, {
           title: '所获荣誉',
           dataIndex: 'honor',//要选定的data的名称，又学到了一点
-          width:150
+          width:150,
+          align:'center',
         },{
           title: '操作',
           dataIndex: 'operate',//要选定的data的名称，又学到了一点
           width:250,
+          align:'center',
           render: (id,index)=>(
                   <span>
                     <ModalTips data={index}/>
@@ -135,13 +144,11 @@ export default class App extends React.Component{
                       })
   }
   renderagain(p,s){
-        console.log(p)
-        console.log(s)
         this.setState({
                             page:p,
                             pageSize:s,
                             dataSource:initData,
-                      })
+         })
   }
   render(){
     console.log('重新渲染')
@@ -155,7 +162,7 @@ export default class App extends React.Component{
     const pagination={
                     current:this.state.page,
                     pageSize:this.state.pageSize,
-                    pageSizeOptions:['10','20','30'],
+                    pageSizeOptions:['10','20','30','40'],
                     total:initData.length, 
                     onChange:this.onChange,
                     showQuickJumper:true,
@@ -169,10 +176,7 @@ export default class App extends React.Component{
     }
     return (
           <div>
-              <Button type="primary" onClick={this.printState.bind(this)}>选中提交</Button>
-              <Button style={{marginLeft:20}} type="primary" onClick={this.reset.bind(this)}>重置</Button>
-              <Table  rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} dataSource={this.state.dataSource} pagination={false}/>
-              <Paging pagination={pagination} onChange={this.renderagain.bind(this)}></Paging>
+              <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 500 }} dataSource={this.state.dataSource} pagination={false}/>
           </div>
     );
   }

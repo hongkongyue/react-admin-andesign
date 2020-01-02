@@ -7,15 +7,16 @@ class ModalTips extends React.Component {
    // 	   super(props)
    // }
    static contextTypes = {
-        color:PropTypes.string,
-        callback:PropTypes.func,
+              color:PropTypes.string,
+              callback:PropTypes.func,
    }
   state = {
-    ModalText: 'Content of the modal',
-    visible: false,
-    confirmLoading: false,
+          ModalText: 'Content of the modal',
+          visible: false,
+          confirmLoading: false,
   }
   componentDidMount(){
+    
   	 this.setState({
   	 	          ModalText:this.props.data.name,
   	 	          address  :this.props.data.address

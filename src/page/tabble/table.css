@@ -1,0 +1,8 @@
+/* .ant-table-header{
+    height:50px!important;
+    margin-bottom: 0px!important;
+    overflow: auto!important;
+} */
+.ant-table-row>td{
+    padding: 2px 3px !important;
+}
