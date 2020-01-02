@@ -30,13 +30,27 @@ export default class Sider extends React.Component {
                 )
             } else {
                 return (
-                    <MenuItem key={item.name} title={item.title}>
+                    <MenuItem  key={item.name}  title={item.title}>
                          <Link to = {item.name}>{item.title}</Link>
                     </MenuItem>
                 )
             }
         })
-    };
+	};
+	//递归循环左侧菜单栏按钮
+	renderMenu=(data)=>{
+         return data.map((item)=>{
+                if(!!item.children&&item.children.length>0){
+					return (
+						<SubMenu key={item.id} title={<span><Icon type="item.type"/><span>{item.title}</span></span>}>
+								{this.renderMenu(item.children)}
+						</SubMenu>
+					)
+				}else{
+					return(<MenuItem key={item.id} title={item.title}> <Link to = {item.name}>{item.title}</Link></MenuItem>)	
+				}
+		 })  
+	}
     render () {
 				return (
 						 <Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{height:'93.2vh',overflowY:'hidden'}} mode="inline">
