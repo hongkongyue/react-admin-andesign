@@ -3,6 +3,7 @@ import {Link } from 'react-router'  //引入路由函数
 import menuList from './mock/menu.js'
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
+const MenuItem = Menu.Item;
 
 
 
@@ -13,26 +14,12 @@ export default class Sider extends React.Component {
 		         	menuList:[]
 		 }
 	}
-    componentDidMount(){
-			this.setState({
-						menuList:menuList()
-			})
-		
-	}
     handleClick = (e) => {
 	}
     render () {
-				 const {menuList}=this.state
-						console.log(menuList,'912345')
 				return (
-					<p>
-					   { menuList.map(index=>{
-									 <span>
-										{index.title}
-									</span>
-								  }) 
-						}
-				  </p>
+						 <Menu theme='dark' onClick={this.handleClick} onChange = {this.getValue} style={{height:'93.2vh',overflowY:'hidden'}} mode="inline">
+                         </Menu>
 				);
 			}
 	 }
