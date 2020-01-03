@@ -4,34 +4,8 @@ import filter     from '../../filters';//已经验证，这是完全OK的；
 import ModalTips     from './modal.js';
 import './table.css'
 // import Paging        from './Pagination'
-var initData=[
-                {id:120,name:'尚美饰品',        age:1541384217,address:'淮河路一号',honor:'优秀品牌'},
-                {id:121,name:'星星饰品',        age:1541384217,address:'楚相大道190号',honor:'优秀品牌'},
-                {id:122,name:'聚饰严选一号店',   age:1541384217,address:'河南路178号',honor:'优秀品牌'},
-                {id:123,name:'大东东区',        age:1541384217,address:'河南信阳市189区',honor:'优秀品牌'},
-                {id:124,name:'北京大区',        age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:125,name:'康美旗舰店',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:126,name:'乐视旗舰店',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:127,name:'海康威视店',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:128,name:'中国一曲',        age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:129,name:'运城大区',        age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:130,name:'我的小家伙一店',   age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:131,name:'中国的就是世界的',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:134,name:'通用别克集团有限公司',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:135,name:'长城汽车集团有限公司',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:136,name:'沃尔沃有限公司',               age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:137,name:'吉利汽车有限公司',    age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:138,name:'新光集团',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:139,name:'中国一拖',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:140,name:'上海一汽',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:141,name:'大众一汽',      age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:142,name:'德国梅赛斯奔驰有限公司',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:143,name:'宝马集团有限公司',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:144,name:'法拉利集团有限公司',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:145,name:'兰博基尼旗舰店',          age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:146,name:'凯迪拉克有限公司',    age:1541384217,address:'河南',honor:'优秀品牌'},
-                {id:147,name:'福特集团有限公司',      age:1541384217,address:'河南',honor:'优秀品牌'}
-             ]
+import initData from './data'
+ console.log(initData,'99999')
 localStorage.setItem('data',JSON.stringify(initData))
 export default class App extends React.Component{
   constructor(props){
@@ -138,7 +112,7 @@ export default class App extends React.Component{
 
   }
   reset(){
-        initData=JSON.parse(localStorage.getItem('data'))
+       const  initData=JSON.parse(localStorage.getItem('data'))
         this.setState({
                       dataSource:initData,
          })
@@ -162,11 +136,12 @@ export default class App extends React.Component{
     console.log('重新渲染')
     const {selectedRowKeys} = this.state;
     const rowSelection = {
-                       selectedRowKeys,
-                       onChange: this.onSelectChange,
-                       hideDefaultSelections: true,
-                       onSelection: this.onSelection,
-                       columnWidth:'50px'
+                        selectedRowKeys,
+                        onChange: this.onSelectChange,
+                        hideDefaultSelections: true,
+                        onSelection: this.onSelection,
+                        columnWidth:'50px',
+                        fixed:'left'
     };
     const pagination={
                     current:this.state.page,
