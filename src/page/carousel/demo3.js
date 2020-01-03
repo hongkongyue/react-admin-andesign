@@ -1,10 +1,5 @@
 import React from 'react'  
-
 import { Carousel } from 'antd';
-
-import '../form/demo1.css'
-
-
 export default class CarouselComponent extends React.Component {
 	render () {
 		return (

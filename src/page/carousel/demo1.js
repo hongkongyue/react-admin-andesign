@@ -1,6 +1,5 @@
 import React from 'react'  
 import { Carousel } from 'antd';
-import '../form/demo1.css'
 
 function onChange(a, b, c) {
   console.log(a, b, c);
