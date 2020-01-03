@@ -47,7 +47,7 @@ export default class App extends React.Component{
          {
           title: `ID`,
           dataIndex: 'id',
-          width:50,
+          width:70,
           align:'center'
           },
          {
@@ -166,7 +166,7 @@ export default class App extends React.Component{
                        onChange: this.onSelectChange,
                        hideDefaultSelections: true,
                        onSelection: this.onSelection,
-                       columnWidth:'40px'
+                       columnWidth:'50px'
     };
     const pagination={
                     current:this.state.page,
