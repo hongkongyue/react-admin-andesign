@@ -3,6 +3,9 @@
     margin-bottom: 0px!important;
     overflow: auto!important;
 } */
+.ant-table-thead > tr > th{
+    padding: 6px 6px !important;   
+}
 .ant-table-row>td{
     padding: 2px 3px !important;
 }

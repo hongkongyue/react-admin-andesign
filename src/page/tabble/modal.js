@@ -16,7 +16,7 @@ class ModalTips extends React.Component {
           confirmLoading: false,
   }
   componentDidMount(){
-    
+
   	 this.setState({
   	 	          ModalText:this.props.data.name,
   	 	          address  :this.props.data.address
@@ -67,13 +67,12 @@ class ModalTips extends React.Component {
     return (
       <span>
         
-        <Button type="primary" onClick={this.showModal}>编辑</Button>
-        <Modal title="编辑模块"visible={visible} onOk={this.handleOk}confirmLoading={confirmLoading}onCancel={this.handleCancel}>
+        <Button type="primary" onClick={this.showModal}  size="small">编辑</Button>
+        <Modal title="编辑模块"visible={visible} onOk={this.handleOk} confirmLoading={confirmLoading} onCancel={this.handleCancel}>
             <p>{ModalText}</p>
             <p>{address}</p>
-             <div style = { style }>
-                SUBSUB
-                <button onClick = { cb(this.state) }>点击我</button>
+             <div style = {style}>
+                <Button type="primary"  onClick = { cb(this.state) }>点击我</Button>
              </div>
         </Modal>
       </span>

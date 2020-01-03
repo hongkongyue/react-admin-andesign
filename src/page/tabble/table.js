@@ -53,7 +53,7 @@ export default class App extends React.Component{
          {
           title: `姓名`,
           dataIndex: 'name',
-          width:50,
+          minWidth:50,
           align:'center',
           ellipsis:true,
           // render:(id,index)=>{
@@ -62,7 +62,7 @@ export default class App extends React.Component{
         }, {
           title: `年龄`,
           dataIndex: 'age',
-          width:150,
+          minWidth:150,
           align:'center',
           render:(id,index)=>{
              return filter.normalTime(index.age)
@@ -70,23 +70,31 @@ export default class App extends React.Component{
         }, {
           title: `地址`,
           dataIndex: 'address',
-          width:50,
+          minWidth:50,
           ellipsis:true,
           align:'center',
         }, {
           title: '所获荣誉',
           dataIndex: 'honor',//要选定的data的名称，又学到了一点
-          width:150,
+          minWidth:150,
           align:'center',
-        },{
+        },
+        {
+          title: '所获荣誉',
+          dataIndex: 'honors',//要选定的data的名称，又学到了一点
+          minWidth:150,
+          align:'center',
+        },
+        {
           title: '操作',
           dataIndex: 'operate',//要选定的data的名称，又学到了一点
           width:250,
+          fixed:'right',
           align:'center',
           render: (id,index)=>(
                   <span>
                     <ModalTips data={index}/>
-                    <Button type="danger" style={{marginLeft:20}} onClick={this.onDelete.bind(this,index)}>删除</Button>
+                    <Button type="danger" style={{marginLeft:20}} onClick={this.onDelete.bind(this,index)} size="small">删除</Button>
                   </span>
             )
          }]
@@ -158,6 +166,7 @@ export default class App extends React.Component{
                        onChange: this.onSelectChange,
                        hideDefaultSelections: true,
                        onSelection: this.onSelection,
+                       columnWidth:'40px'
     };
     const pagination={
                     current:this.state.page,
