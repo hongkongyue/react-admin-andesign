@@ -30,10 +30,8 @@ export default class App extends React.Component{
           minWidth:50,
           align:'center',
           ellipsis:true,
-          // render:(id,index)=>{
-          //    return filter.normalString(index.name,4)
-          // }
-        }, {
+         }, 
+         {
           title: `年龄`,
           dataIndex: 'age',
           minWidth:150,
@@ -41,7 +39,8 @@ export default class App extends React.Component{
           render:(id,index)=>{
              return filter.normalTime(index.age)
           }
-        }, {
+        }, 
+        {
           title: `地址`,
           dataIndex: 'address',
           minWidth:50,
@@ -94,8 +93,7 @@ export default class App extends React.Component{
     console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({selectedRowKeys});
   }
-  componentDidMount(){
-              console.log(this.props.title)
+  componentWillMount(){
               this.setState({
                            dataSource:initData,
               })
