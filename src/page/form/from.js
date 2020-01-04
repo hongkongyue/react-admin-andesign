@@ -1,9 +1,12 @@
 
 import React from 'react'  
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { Form, Input, Tooltip, Icon,message ,Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 class RegistrationForm extends React.Component {
+  constructor(props){
+    super(props)
+  }
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
@@ -16,7 +19,9 @@ class RegistrationForm extends React.Component {
       }
     });
   }
-
+ del=()=>{
+    if(this.props.selectedRowKeys.length==0) return  message.error('请选择要删除的数据')
+ }
   render() {
     const { getFieldDecorator } = this.props.form;
     const { autoCompleteResult } = this.state;
@@ -56,6 +61,7 @@ class RegistrationForm extends React.Component {
                 )}
                 </FormItem>
                 <FormItem ><Button  htmlType="submit" >查询</Button></FormItem>
+                <FormItem ><Button onClick={this.del}>删除</Button></FormItem>
             </Form>
         </div>
     );

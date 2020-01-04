@@ -2,6 +2,7 @@ import React from 'react';
 import { Table,Button,message} from 'antd';
 import filter     from '../../filters';//已经验证，这是完全OK的；
 import ModalTips     from './modal.js';
+import Forms from '../form'
 import './table.css'
 // import Paging        from './Pagination'
 import initData from './data'
@@ -158,6 +159,7 @@ export default class App extends React.Component{
     }
     return (
           <div>
+              <Forms selectedRowKeys={this.state.selectedRowKeys}/>
               <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 400 }} dataSource={this.state.dataSource} pagination={pagination}/>
           </div>
     );
