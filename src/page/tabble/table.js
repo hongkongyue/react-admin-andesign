@@ -130,6 +130,12 @@ export default class App extends React.Component{
                             dataSource:initData,
          })
   }
+  getNumCallback = (obj) => {
+    this.setState({
+        formSearch:obj
+    })
+    console.log('当前的向父亲传递的对象是：',this.state.formSearch);
+ }
   render(){
     console.log('重新渲染')
     const {selectedRowKeys} = this.state;
@@ -159,7 +165,7 @@ export default class App extends React.Component{
     }
     return (
           <div>
-              <Forms selectedRowKeys={this.state.selectedRowKeys}/>
+              <Forms selectedRowKeys={this.state.selectedRowKeys}  getNumCallback = {this.getNumCallback.bind(this)}/>
               <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 400 }} dataSource={this.state.dataSource} pagination={pagination}/>
           </div>
     );

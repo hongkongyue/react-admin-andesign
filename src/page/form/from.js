@@ -1,33 +1,43 @@
 
 import React from 'react'  
-import { Form, Input, Tooltip, Icon,message ,Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { Form, Input, Tooltip, Icon, message, Button} from 'antd';
 const FormItem = Form.Item;
-const Option = Select.Option;
 class RegistrationForm extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      confirmDirty: false,
+      autoCompleteResult: [],
+      formSearch:{},
+    };
   }
-  state = {
-    confirmDirty: false,
-    autoCompleteResult: [],
-  };
+  
+  reset=()=>{
+           this.props.form.resetFields();
+           this.setState({
+                         formSearch:{}
+           })
+  }
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
+                this.setState({
+                            formSearch:this.props.form.getFieldsValue()
+                })
+                setTimeout(()=>{
+                  this.props.getNumCallback(this.props.form.getFieldsValue())
+                })
   }
  del=()=>{
-    if(this.props.selectedRowKeys.length==0) return  message.error('请选择要删除的数据')
+        if(this.props.selectedRowKeys.length==0) return  message.error('请选择要删除的数据')
  }
   render() {
     const { getFieldDecorator } = this.props.form;
     const { autoCompleteResult } = this.state;
+    setTimeout(()=>{
+      console.log(this.state.formSearch,'989898')
+ })
     return (
         <div style={{minHeight:'100px',background:'#fff',borderRadius:'10px',marginBottom:'20px'}}>
-            <Form onSubmit={this.handleSubmit} layout="inline" >
+            <Form  layout="inline" >
                 <FormItem  label="邮箱："
                 >
                 {getFieldDecorator('email', {
@@ -60,8 +70,9 @@ class RegistrationForm extends React.Component {
                     <Input type="text" onBlur={this.handleConfirmBlur} />
                 )}
                 </FormItem>
-                <FormItem ><Button  htmlType="submit" >查询</Button></FormItem>
+                <FormItem ><Button  onClick={this.handleSubmit} >查询</Button></FormItem>
                 <FormItem ><Button onClick={this.del}>删除</Button></FormItem>
+                <FormItem ><Button onClick={this.reset}>重置按钮</Button></FormItem>
             </Form>
         </div>
     );
