@@ -5,7 +5,6 @@ import ModalTips     from './modal.js';
 import './table.css'
 // import Paging        from './Pagination'
 import initData from './data'
- console.log(initData,'99999')
 localStorage.setItem('data',JSON.stringify(initData))
 export default class App extends React.Component{
   constructor(props){
@@ -149,6 +148,7 @@ export default class App extends React.Component{
                     onChange:this.onChange,
                     showQuickJumper:true,
                     showSizeChanger:true,
+                    size:'small',
                     onShowSizeChange:(p,s)=>{
                        this.renderagain(p,s)
                     },
@@ -158,7 +158,7 @@ export default class App extends React.Component{
     }
     return (
           <div>
-              <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 500 }} dataSource={this.state.dataSource} pagination={false}/>
+              <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 400 }} dataSource={this.state.dataSource} pagination={pagination}/>
           </div>
     );
   }

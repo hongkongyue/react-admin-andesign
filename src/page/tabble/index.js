@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types"
 import Table from './table'
-
+import Forms from '../form'
 
 export default class TabbleAll extends React.Component {
     // 父组件声明自己支持 context
@@ -21,6 +21,6 @@ export default class TabbleAll extends React.Component {
         console.log(msg);
     }
     render () {
-        return (<Table/>)
+        return (<span><Forms/><Table/></span>)
     }
 }
