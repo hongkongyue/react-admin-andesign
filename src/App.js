@@ -6,7 +6,7 @@ function FormattedDate(props) {
 }
 
 function clickMe() {
-	alert("点击事件")
+	     alert("点击事件")
 }
 
 class App extends Component {
