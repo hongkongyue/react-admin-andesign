@@ -62,7 +62,7 @@ export default class Demo1 extends React.Component {
                          <HeaderComponent/>
                     </Header>
                     <Layout>
-                        <Sider style={{color:'#666',width:156}}>
+                        <Sider style={{color:'#666',width:146}}>
                             <SiderComponent getValue={this.getValue.bind(this) } />
                         </Sider>
                         <Layout>

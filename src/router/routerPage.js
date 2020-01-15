@@ -14,7 +14,7 @@ import Redux from '../page/redux'
 
 export default class RouteMap extends React.Component {
     updateHandle () {
-        console.log(this.props.history)
+                console.log(this.props.history)
     }
     render () {
         return (
