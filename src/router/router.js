@@ -23,13 +23,13 @@ export default class routerMap extends React.Component{
 	    updateHandle(){
         		Nav()
         }
-        // routerWillLeave(nextLocation){
-		   //删除的部分
-        // }
+        routerWillLeave(nextLocation){
+		     console.log('当前路由是：',nextLocation)
+        }
         render(){
         	   return(
 	        	   	<Router onUpdate={this.updateHandle.bind(this)} history={this.props.history}>
-	        	   		    <Route      path='/'       component={Demo1}>
+	        	   		    <Route   path='/' component={Demo1} >
 		        	   		        <IndexRoute  component={Tabble}/>
 										<Route path='/tabble' component={Tabble}></Route>
 										<Route path='/label' component={Label}></Route>

@@ -19,7 +19,7 @@ export default class Demo1 extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
+        console.log(nextProps,'路由');
        if(nextProps.routes[1].path=='/label'){
             this.setState({
                     name:'表格组件',

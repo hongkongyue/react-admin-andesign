@@ -7,7 +7,6 @@ const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 
 
-
 export default class Sider extends React.Component {
 	constructor (props) {
 		 super(props)
@@ -30,7 +29,7 @@ export default class Sider extends React.Component {
 						  </SubMenu>
 					   )
 				   }else{
-					    return(<MenuItem key={item.id} title={item.title}> <Link to = {item.name}>{item.title}</Link></MenuItem>) 
+					    return(<MenuItem key={item.id} title={item.title}> <Link to ={item.name}>{item.title}</Link></MenuItem>) 
 				   }
 		   }) 
 	}
