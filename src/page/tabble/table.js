@@ -164,7 +164,7 @@ export default class App extends React.Component{
                     }
     }
     return (
-          <div>
+          <div className="table-container">
               <Forms selectedRowKeys={this.state.selectedRowKeys}  getNumCallback = {this.getNumCallback.bind(this)}/>
               <Table bordered rowKey={record => record.id} rowSelection={rowSelection} columns={this.columns} scroll={{x: 1500, y: 400 }} dataSource={this.state.dataSource} pagination={pagination}/>
           </div>

@@ -9,3 +9,9 @@
 .ant-table-row>td{
     padding: 4px 4px !important;
 }
+.table-container{
+        width:100%;
+        height:auto;
+        background: #fff;
+        padding: 20px 10px;
+}

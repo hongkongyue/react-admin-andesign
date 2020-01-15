@@ -66,11 +66,11 @@ export default class Demo1 extends React.Component {
                             <SiderComponent getValue={this.getValue.bind(this) } />
                         </Sider>
                         <Layout>
-                                <Breadcrumb style={{width:'100%',height:'5.5vh',lineHeight:'5.5vh',textAlign:'left',marginLeft:'5%'}}>
+                                <Breadcrumb style={{width:'100%',height:'5.5vh',lineHeight:'5.5vh',textAlign:'left',paddingLeft:'20px'}}>
                                    <Breadcrumb.Item><span style={{fontWeight:'bold',color:'#000'}}>{this.state.name}</span></Breadcrumb.Item>
                                    <Breadcrumb.Item><span>{this.state.childname}</span></Breadcrumb.Item>
                                  </Breadcrumb>
-                                <Content style={{marginLeft:'5%',height:'86vh',paddingRight:'2%',overflow:'auto',textAlign:'center'}}>
+                                <Content style={{paddingLeft:'10px',height:'86vh',paddingRight:'2%',overflow:'auto',textAlign:'center'}}>
                                     {this.props.children}
                                 </Content>
                         </Layout>
