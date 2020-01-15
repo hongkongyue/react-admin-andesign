@@ -31,16 +31,16 @@ export default class routerMap extends React.Component{
 	        	   	<Router onUpdate={this.updateHandle.bind(this)} history={this.props.history}>
 	        	   		    <Route      path='/'       component={Demo1}>
 		        	   		        <IndexRoute  component={Tabble}/>
-			        	   		    <Route path='/tabble' component={Tabble}></Route>
-				                    <Route path='/label' component={Label}></Route>
-				                    <Route path='/form' component={Form}></Route>
-				                    <Route path='/carousel' component={Carousel}></Route>
-				                    <Route path='/shop_home' component={ShopHome}></Route>
-				                    <Route path='/shop_home_detail' component={HomeDetail}></Route>
-				                    <Route path='/echarts' component={Echarts}></Route>
-				                    <Route path='/editor' component={WangEditor}></Route>
-				                    <Route path='/select' component={Select}></Route>
-				                    <Route path='/redux' component={Redux}></Route>
+										<Route path='/tabble' component={Tabble}></Route>
+										<Route path='/label' component={Label}></Route>
+										<Route path='/form' component={Form}></Route>
+										<Route path='/carousel' component={Carousel}></Route>
+										<Route path='/shop_home' component={ShopHome}></Route>
+										<Route path='/shop_home_detail' component={HomeDetail}></Route>
+										<Route path='/echarts' component={Echarts}></Route>
+										<Route path='/editor' component={WangEditor}></Route>
+										<Route path='/select' component={Select}></Route>
+										<Route path='/redux' component={Redux}></Route>
 				                    <Route path='/input' component={Input}></Route>
 		        	   		</Route>
 	        	   	</Router>

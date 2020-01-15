@@ -16,7 +16,6 @@ import WangEditor from '../page/wangeditor'
 import Select from '../page/select'
 import Redux from '../page/redux'
 
-
 export default class RouteMap extends React.Component {
     updateHandle () {
         console.log(this.props.history)

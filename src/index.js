@@ -1,5 +1,2 @@
-import './index.css';
-// import registerServiceWorker from './registerServiceWorker';
-
+import './index.css'
 import './router'
-// registerServiceWorker();
