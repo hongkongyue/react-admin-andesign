@@ -38,7 +38,7 @@ export default class Sider extends React.Component {
 						 <Menu theme='dark' onClick={this.handleClick}  onChange ={this.getValue} style={{height:'93.2vh',overflowY:'hidden'}} mode="inline">
                              {this.state.menuList}
                          </Menu>
-				);
+				       );
 			}
 	 }
 	 
