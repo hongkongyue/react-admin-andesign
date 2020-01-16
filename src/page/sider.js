@@ -12,12 +12,24 @@ export default class Sider extends React.Component {
 		 super(props)
 		 this.state={menuList:[]}
 	}
+	recurisonGetRouter(data,id){
+		//   const arr=data.flat(Infinity)
+		//   console.log(arr,'546789765')
+		//    for(let i=0,len=arr.length;i<len;i++){
+		// 	   if(arr[i].id==id){
+		// 		      return arr[i]
+		// 	   }
+		//    }
+       
+	}
     handleClick = (e) => {
-		console.log('点击了',e)
+		console.log(this.recurisonGetRouter(menuConfig,e.key),"结果")
+		           
 	}
 	componentWillMount() {
         const menuList = this.recursionMenu(menuConfig);
-        this.setState({menuList})
+		this.setState({menuList})
+		setTimeout(()=>{console.log(menuConfig,'99999')})
     }
 	//递归循环左侧菜单栏按钮
 	recursionMenu=(data)=>{

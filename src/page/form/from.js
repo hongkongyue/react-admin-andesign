@@ -72,7 +72,7 @@ class RegistrationForm extends React.Component {
                 </FormItem>
                 <FormItem ><Button   type="primary" onClick={this.handleSubmit} >查询</Button></FormItem>
                 <FormItem ><Button   type="primary" onClick={this.del}>删除</Button></FormItem>
-                <FormItem ><Button  onClick={this.reset}>重置</Button></FormItem>
+                <FormItem ><Button   onClick={this.reset}>重置</Button></FormItem>
             </Form>
         </div>
     );

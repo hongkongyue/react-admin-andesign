@@ -1,11 +1,13 @@
 import React from 'react';
-
+import store from '../redux/store'
 import {Layout} from 'antd';
+
 import { Breadcrumb } from 'antd';
 import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 import HeaderComponent from './header'
 import FooterComponent from './footer'
 import SiderComponent from './sider'
+import  Navigator     from './navigatior'
 const { Header, Footer, Sider, Content  } = Layout;
 
 export default class Demo1 extends React.Component {
@@ -19,23 +21,8 @@ export default class Demo1 extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps,'路由');
-       if(nextProps.routes[1].path=='/label'){
-            this.setState({
-                    name:'表格组件',
-                    childname:'标签'
-            })
-       }else if(nextProps.routes[1].path=='/tabble'){
-            this.setState({
-                    name:'表格组件',
-                    childname:'表格'
-            })
-       }else{
-           this.setState({
-                    name:'默认',
-                    childname:'默认桌面'
-           })
-       }
+        console.log(store.getState(),'9999')
+        // store.dispatch()
 
     }
     getValue (val,value) {
@@ -66,11 +53,8 @@ export default class Demo1 extends React.Component {
                             <SiderComponent getValue={this.getValue.bind(this) } />
                         </Sider>
                         <Layout>
-                                <Breadcrumb style={{width:'100%',height:'5.5vh',lineHeight:'5.5vh',textAlign:'left',paddingLeft:'20px'}}>
-                                   <Breadcrumb.Item><span style={{fontWeight:'bold',color:'#000'}}>{this.state.name}</span></Breadcrumb.Item>
-                                   <Breadcrumb.Item><span>{this.state.childname}</span></Breadcrumb.Item>
-                                 </Breadcrumb>
-                                <Content style={{paddingLeft:'10px',height:'86vh',paddingRight:'2%',overflow:'auto',textAlign:'center'}}>
+                               <Navigator></Navigator>
+                                <Content style={{padding:'0px  10px',height:'86vh',overflow:'auto',textAlign:'center'}}>
                                     {this.props.children}
                                 </Content>
                         </Layout>
